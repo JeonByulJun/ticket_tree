@@ -1,10 +1,27 @@
+<header style="
+    position: relative;
+    width: 100%;
+    height: 993px;
+    text-align: center;
+    color: #fff;
+    background-image: url(http://ironsummitmedia.github.io/startbootstrap-creative/img/header.jpg);
+    background-position: center;
+    background-size: cover;
+">
+  <div class="header-content"  style="position:relative;top: 30%;">
+    <div class="header-content-inner">
+      <h1 style="font-size: 65px;"><%=@Title%></h1>
+      <hr>
+      <p>티켓트리는 누구나 쉽게 티켓을 만들어 다른 사람들에게 나눠줄 수 있게 해주는 서비스 입니다. 아래 사진을 눌러 다른사람들에게도 티켓을 뿌려보세요!</p>
+      <h3></h3>
+      <a id="kakao-link-btn" href="javascript:;">
+        <img src=<%=@Img_url%> />
+      </a>
+    </div>
+  </div>
+</header>
 
 
-
-<h3><%=@Title%></h3>
-<a id="kakao-link-btn" href="javascript:;">
-  <img src=<%=@Img_url%> />
-</a>
 
 <script>
   // 사용할 앱의 JavaScript 키를 설정해 주세요.
@@ -20,7 +37,7 @@
       height: '200'
     },
     webButton: {
-      text: '주변 친구들에게 티켓 종자를 뿌려주세요',
+      text: '다른 친구에게도 티켓 주기',
       url: 'https://ticket-tree.herokuapp.com/ticket/make?title=<%=@Title%>&img_url=<%=@Img_url%>' // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
     }
   });
