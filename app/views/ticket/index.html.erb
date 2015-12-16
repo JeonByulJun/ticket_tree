@@ -1,24 +1,5 @@
-<h3>아이유를 눌러 12월 5일 드림콘서트를 홍보하세요!</h3>
-<a id="kakao-link-btn" href="javascript:;">
-  <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRPcAvW06Y-2gehBdKy1RBXMAjW3hx6iBt3kx_WiWcbcqxMEVBTbQ" />
-</a>
-
-<script>
-  // 사용할 앱의 JavaScript 키를 설정해 주세요.
-  Kakao.init('8e17d9768d0b9a00ca9f50954dfa9046');
-  
-  // 카카오톡 링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
-  Kakao.Link.createTalkLinkButton({
-    container: '#kakao-link-btn',
-    label: '아이유 12월 5일 드림콘서트',
-    image: {
-      src: 'http://cfile3.uf.tistory.com/image/234CD93D526C5D751DA6A7',
-      width: '300',
-      height: '200'
-    },
-    webButton: {
-      text: '주변 친구들에게 티켓 종자를 뿌려주세요',
-      url: 'https://ticket-tree.herokuapp.com/' // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
-    }
-  });
-</script>
+<form action="/ticket/make" method="GET">
+    <input type="text" name="title" value="여기에 머리말을 입력해주세요"><br>
+    <input type="text" name="img_url" value="올릴 이미지의  url을 입력해주세요">
+    <input type="submit" value="완성">
+</form>

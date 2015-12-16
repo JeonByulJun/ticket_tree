@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'ticket#index'
+  root :to => 'ticket#index'
+  get "ticket/make"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
