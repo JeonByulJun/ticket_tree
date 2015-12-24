@@ -1,4 +1,5 @@
 <div style="
+    display:table;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -8,12 +9,12 @@
     background-position: center;
     background-size: cover;
 ">
-  <div class="header-content"  style="position:relative;top: 30%;">
+  <div class="header-content"  style="position:relative;display:table-cell;vertical-align:middle;">
     <div class="header-content-inner">
-      <h1 style="font-size: 65px;">여러분만의 티켓을 만들어 보세요</h1>
+      <h1 style="font-size: 65px;">나만의 티켓을 만들어 보세요</h1>
       <hr>
-      <p>티켓트리는 누구나 쉽게 티켓을 만들어 다른 사람들에게 나눠줄 수 있게 해주는 서비스 입니다. 아래 만들기 버튼을 눌러 티켓의 이름과 사진을 넣고 카카오 톡으로 뿌려보세요!</p>
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+      <p>티켓트리는 누구나 쉽게 티켓을 만들어 다른 사람들에게 나눠줄 수 있게 해주는 서비스 입니다. 아래 만들기 버튼을 눌러 티켓의 이름과 사진을 넣고 카카오톡으로 뿌려보세요!</p>
+      <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#myModal">
         티켓 만들기
       </button>
       <!-- Modal -->
@@ -25,14 +26,14 @@
               <font color="black"><h4 class="modal-title"  id="myModalLabel">티켓 만들기</h4></font>
             </div>
             <div class="modal-body">
-              <form action="/ticket/make" method="GET">
+              <form name="ticket" action="/ticket/make" method="GET">
                 <div class="form-group">
-                  <input type="text" class="form-control" name="title" placeholder="여기에 머리말을 입력해주세요">
+                  <input type="text" class="form-control" id="title" name="title" placeholder="여기에 머리말을 입력해주세요">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" name="img_url" placeholder="이미지  url을 입력해주세요">
+                  <input type="text" class="form-control" id="url" name="img_url" placeholder="이미지  url을 입력해주세요">
                 </div>
-                <button type="submit" class="btn btn-primary">완성</button>
+                <input type="button" value="완성" class="btn btn-warning" onclick="erchk()">
               </form>
             </div>
           </div>
@@ -42,6 +43,16 @@
   </div>
 </div>
 
-
-
-
+<script>
+  function erchk() {
+    if(document.getElementById("title").value == ""){
+      alert("머릿말을 적어주세요!");
+      return false;
+    }
+    else if (document.getElementById("url").value == "") {
+      alert("사진을 올려주세요!");
+      return false;
+    }else
+      document.ticket.submit();
+  }
+</script>
